@@ -1,0 +1,93 @@
+/**********************/
+/* Estilos generales  */
+/**********************/
+body {
+    background-color: bisque;
+    font-family: sans-serif;
+    font-size: 18px;
+    color: black; 
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+/**********************/
+/* Estilos encabezado */
+/**********************/
+header {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+/*********************/
+/* Estilos menu      */
+/*********************/
+nav {
+    margin: 0 auto;
+    width: 1366px;
+    
+}
+nav ul {
+    list-style-type: none;
+    height: 60px;
+    /*margin: 10px auto;*/
+    padding: auto;
+    text-align-last: center;
+}
+nav ul li {
+    display: inline-block;
+    color: grey;
+    margin: 10px;
+    
+}
+nav ul a {
+    font-size:  35px;
+    text-decoration: none;
+}
+/*nav ul a:nth-child(2) {
+    color: red;
+    font-size: 35px;
+}*/
+nav ul li:hover {
+    font-weight: bolder;
+    text-decoration: underline; 
+}
+div {
+    height: 15px;
+    background-color: gray;
+    border: solid;
+    border-color: dimgrey;
+    border-width:thin;
+}
+/*********************/
+/* Estilos section   */
+/*********************/
+section.detalle {
+    margin-left: 50px;
+    margin-right: 100px;
+}
+section img:nth-child(6) {
+    margin-top: 12px;
+    margin-left: 416px;
+}
+/*********************/
+/* Estilos pie       */
+/*********************/
+footer {
+    margin-top: 12px;
+    padding: 0;
+    background-color: grey;
+}
+footer li{
+      list-style-type: none;  
+}
+footer ul {
+    /*margin-top: 25px;*/
+    display: inline-block;
+    /*margin-left: 40px;*/
+    margin: 0 0 auto 40px;
+}
+footer div.mapa {
+    display: inline-block;    
+    margin-top: 20px;
+    margin-left: 95px;
+}
