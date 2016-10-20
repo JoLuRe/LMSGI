@@ -22,10 +22,10 @@ Si volem un fitxer natiu **RTF**, per exemple, hem de crear-lo amb un aplicatiu 
 
 Per això, els meus fitxers exemple s'han d'entendre així:
 
-[**exemple 1 NO.rtf**](https://github.com/JoLuRe/LMSGI/exemple1_NO.rtf) --> malgrat l'extensiò es tracta de texte pla (veure'n contingut i explicació)  
-[**exemple 2 NO.rtf**](https://github.com/JoLuRe/LMSGI/exemple2_NO.rtf) --> malgrat l'extensió es tracta de codi RTF guardat a dins d'un fitxer de TXT generat amb el bloc de notes. El codi RTF està agafat dels apunts i s'ha copiat fent "Copiar-Pegar". Això NO genera un fitxer RTF encara que es vegin caràcters "RTF" al contingut del fitxer  
-[**exemple 1 de fitxer RTF.rtf**](https://github.com/JoLuRe/LMSGI/exemple1_RTF.rtf) --> aquest sí és un fitxer RTF, en aquest cas creat amb MS-Word i guardat com a RTF. Aquí sí és possible formatejar amb negreta, per exemple una sola paraula opart del text  
-[**exemple 2 de fitxer RTF.rtf**](https://github.com/JoLuRe/LMSGI/exemple2_RTF.rtf) --> aquest és un altre exemple de fitxer RTF vàlid. En aquest cas s'ha generat amb WordPad i permet formatejar part del texte diferent de la resta  
+[**exemple 1 NO.rtf**](https://github.com/JoLuRe/LMSGI/blob/master/exemple1_NO.rtf) --> malgrat l'extensiò es tracta de texte pla (veure'n contingut i explicació)  
+[**exemple 2 NO.rtf**](https://github.com/JoLuRe/LMSGI/blob/master/exemple2_NO.rtf) --> malgrat l'extensió es tracta de codi RTF guardat a dins d'un fitxer de TXT generat amb el bloc de notes. El codi RTF està agafat dels apunts i s'ha copiat fent "Copiar-Pegar". Això NO genera un fitxer RTF encara que es vegin caràcters "RTF" al contingut del fitxer  
+[**exemple 1 de fitxer RTF.rtf**](https://github.com/JoLuRe/LMSGI/blob/master/exemple1_RTF.rtf) --> aquest sí és un fitxer RTF, en aquest cas creat amb MS-Word i guardat com a RTF. Aquí sí és possible formatejar amb negreta, per exemple una sola paraula opart del text  
+[**exemple 2 de fitxer RTF.rtf**](https://github.com/JoLuRe/LMSGI/blob/master/exemple2_RTF.rtf) --> aquest és un altre exemple de fitxer RTF vàlid. En aquest cas s'ha generat amb WordPad i permet formatejar part del texte diferent de la resta  
 
 No estic segur de si això és el que la tasca demanava, la veritat, però en qualsevol cas es pot crear un fitxer RTF a base de posar manualment les etiquetes de control que formategen el texte contingut (cosa que ningú no fa avui).
 
