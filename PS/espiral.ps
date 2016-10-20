@@ -1,0 +1,45 @@
+%!
+
+/mm {72 mul 25.4 div} def   % Conversion de mm a puntos
+/W {210 mm} def             % Ancho A4
+/H {297 mm} def             % Alto A4
+
+<< /PageSize [W H] >> setpagedevice 
+
+/polar {
+    % Conversion de polar a cartesiano
+    % Espera: radio, angulo
+    % Devuelve: x, y
+
+    2 copy                  % Preservar parámetros
+    cos mul                 % Obtiene radio*cos(angulo)
+    3 1 roll                % Rotar parámetros
+    sin mul                 % Obtiene radio*sin(angulo)
+} def 
+
+/f {					
+    % Función espiral
+    % Espera: angulo
+    % Devuelve: radio = angulo/8
+	
+    8 div			
+} def
+
+/Giros {5} def              % Total de giros de la espiral
+/Paso {1} def               % Angulos en pasos de 1 grado
+W 2 div H 2 div translate   % Origen de coordenadas al centro de la p‡gina
+
+% Crear espiral mediante pequeños trazos de recta
+0 0 moveto
+Paso Paso 360 Giros mul {   % Angulos en pasos hasta completar Giros 
+    dup                     % Preservar angulo
+    f                       % Obtener radio correspondiente
+    exch polar              % Pasar de polar a cartesiano
+    lineto                  % Crear linea
+} for
+
+2 setlinewidth
+0 0 1 setrgbcolor
+stroke                      % Trazar espiral en azul
+
+showpage

@@ -1,0 +1,94 @@
+%!
+
+/mm {72 mul 25.4 div} def   % Conversion de mm a puntos
+/W {210 mm} def             % Ancho A4
+/H {297 mm} def             % Alto A4
+
+<< /PageSize [W H] >> setpagedevice 
+
+/medirtrazado {
+    % Calcula el ancho y alto del trazado actual. Este procedimiento
+    % hace uso del operador pathbbox, que devuelve las coordenadas de
+    % la esquina inferior izquierda (llx, lly) y 
+    % la esquina superior derecha (urx, ury)
+    % de la caja imaginaria que contiene el trazado actual.
+    % Con estos datos calcularemos el ancho y alto del trazado.
+    % Se ilustra el movimiento de pila necesario.
+    % Espera: -
+    % Devuelve: ancho alto
+
+                     % Estado de la pila luego de la ejecucion:
+    pathbbox         % llx lly urx ury
+    3 1 roll         % llx ury lly urx 
+    exch             % llx ury urx lly
+    3 -1 roll        % llx urx lly ury
+    4 2 roll         % lly ury llx urx
+    sub neg          % lly ury ancho
+    3 1 roll         % ancho lly ury
+    sub neg          % ancho alto 
+} def
+
+/medirtexto {
+    % Calcula el tamaño que ocupa un texto utilizando la tipografia actual,
+    % aprovechando el procedimiento anterior.
+    % Espera: texto
+    % Devuelve: ancho alto
+
+                     % Estado de la pila luego de la ejecucion:
+    newpath          % palabra      (crea un nuevo trazado vacio)
+    0 0 moveto       % palabra      (posicionarse en el origen)
+    false charpath   % -            (estableció el texto como trazado)
+    medirtrazado     % ancho alto   (tenemos las dimensiones)
+} def
+
+/centrar {
+    % Realiza un moveto al extremo inferior izquierdo de un area 
+    % de cierto ancho y alto para que quede centrada en la p‡gina.
+    % Espera: ancho alto
+    % Devuelve: -
+
+                     % Estado de la pila luego de la ejecucion:
+	H sub neg 2 div	 % ancho (H-alto)/2
+	exch             % (H-alto)/2 ancho
+	W sub neg 2 div  % (H-alto)/2 (W-ancho)/2
+	exch             % (W-ancho)/2 (H-alto)/2
+	moveto           % -
+} def
+
+/rayos {
+    % Crea rayos a partir de un punto dado
+    % Espera: x y
+    % Deja: -
+	
+    translate              % Poner el origen en las coordenadas dadas
+    0 2 360 {              % De 0 a 360 grados en pasos de 2 grados
+        gsave              % Preservar el estado grafico
+        rotate             % Rotar este angulo
+        newpath	           % Empezar un trazado nuevo
+        0 0 moveto         % Moverse al origen
+        W 2 div 0 rlineto  % Crear linea hacia la derecha de la mitad del ancho de la pagina
+        stroke             % Trazar
+        grestore           % Recuperar el estado grafico
+    } for
+} def
+
+/Texto (PostScript) def    % El texto a emplear
+
+% Preparar tipografias y constantes
+/Times-Bold findfont 
+40 mm scalefont 
+setfont
+
+Texto medirtexto           % Medir el texto a utilizar
+newpath                    % Iniciar trazado
+    centrar                % Ubicarnos para que el texto aparezca centrado
+    Texto true charpath    % Convertir el texto en trazado
+    gsave                  % Preservar el estado grafico
+    1 setlinewidth         % Establecer espesor de linea en 1 pt
+    stroke                 % Trazar el texto
+    grestore               % Recuperar el estado grafico
+    clip                   % Recortar utilizando este trazado como limite 
+1 0 0 setrgbcolor          % Usar rojo
+W 2 div H 2 div rayos      % Rayos a partir del centro
+
+showpage
