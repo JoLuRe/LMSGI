@@ -7,6 +7,8 @@ Llenguatge de Marques i Sistemes de Gestió de la Informació
 EL meu repositori conté exemples de:
 * TXT
 * RTF
+* PS 
+* XML
 * HTML(5)
 * CSS(3)
 
@@ -29,6 +31,7 @@ Per això, els meus fitxers exemple s'han d'entendre així:
 
 No estic segur de si això és el que la tasca demanava, la veritat, però en qualsevol cas es pot crear un fitxer RTF a base de posar manualment les etiquetes de control que formategen el texte contingut (cosa que ningú no fa avui).
 
-Amb PostScript, XML i demés formats el raonament és el mateix
+Amb PostScript, XML i demés formats el raonament és similar.
+He inclòs exemples presos d'Internet i de propis i amb petites variacions per experimentar, perquè alguns es visualitzen bé i dàltres no tot i que la sintaxi és semblant. A més, alguns es veuen bé amb uns programes i en canvi no amb altres. Necessito **contrastar dubtes** en aquest sentit
 
-La resta de fitxers corresponen a una petita web de mostra amb HTML5 i CSS3, tot i que són tan bàsics que no fan gaire ús de "_features_" avançades d'aquests llenguatges. Aquesta és una web (no real) amb la qual com a exemple vaig estar jugant fa poc.
+La resta de fitxers HTML i CSS corresponen a una petita web de mostra amb HTML5 i CSS3, tot i que són tan bàsics que no fan gaire ús de "_features_" avançades d'aquests llenguatges. Aquesta és una web (no real) amb la qual com a exemple vaig estar jugant fa poques setmanes
